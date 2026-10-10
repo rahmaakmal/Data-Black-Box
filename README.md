@@ -1,5 +1,4 @@
 # Data-Black-Box
-# Data Black Box
 
 ## Project Overview
 Data Black Box is a Data Incident Detection, Investigation, and Root Cause Analysis Platform.
