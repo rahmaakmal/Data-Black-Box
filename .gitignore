@@ -216,3 +216,18 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+# Local environment secrets
+.env.*
+!.env.example
+
+# Local project data
+data/
+*.csv
+
+# Local Python environments
+.venv/
+venv/
+
+# Local logs
+logs/
+*.log
