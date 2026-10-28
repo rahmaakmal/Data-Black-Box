@@ -42,9 +42,11 @@ services:
 
   data-generator:
     build: .
+    profiles: ["ingestion"]
     command: ["python", "data_generator.py"]
     environment:
       KAFKA_SERVER: kafka:9092
+      TEST_LIMIT: ${TEST_LIMIT:-2}
     depends_on:
       kafka:
         condition: service_healthy
@@ -60,6 +62,8 @@ services:
       DB_NAME: bronze_db
       DB_USER: shahd
       DB_PASSWORD: ${DB_PASSWORD:-local_review_password}
+      DB_SCHEMA: bronze
+      DLQ_TOPIC: solar-data-dlq
     depends_on:
       kafka:
         condition: service_healthy
